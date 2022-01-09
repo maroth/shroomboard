@@ -44,16 +44,8 @@ def host_dashboard():
     fig = create_figure()
     app.layout = html.Div(children=[
         html.H1(children='Behold our fabulous mushroom farm!'),
-
-        html.Div(children='''
-            Mushrooms are tasty and also look nice.
-        '''),
-
-        dcc.Graph(
-            id='humidity-temperature-graph',
-            figure=fig
-        ),
-
+        html.Div(children='Mushrooms are tasty and also look nice.'),
+        dcc.Graph(id='humidity-temperature-graph', figure=fig),
         dcc.Interval(id="auto-refresh", interval=60*1000)
     ])
     app.run_server(debug=False, host='0.0.0.0')
